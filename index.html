@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Flashcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="flashcards.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="score"></div>
+      <br>
+      <p class="questAnsText">Choose the correct answer:</p>
+      <div id="flashcard">
+        <div class="questBlock">
+          <div id="questText" class="questAnsText"></div>
+        </div>
+        <ul class="questAnsText">
+          <li class="questChoices"></li>
+          <li class="questChoices"></li>
+          <li class="questChoices"></li>
+          <li class="questChoices"></li>
+        </ul>
+      </div>
+        <div id="results"></div>
+      </div>
+      <button id="showAnswerBtn" class="btn">Show Answer</button>
+      <button id="hideAnswerBtn" class="btn">Hide Answer</button>
+      <br />
+        <div id="answer" class="questAnsText"></div>
+      </div>
+    </div>
+    <script src="flashcards.js"></script>
+  </body>
+</html>
