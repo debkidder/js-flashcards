@@ -61,6 +61,7 @@ let app = {
 
     // sets and updates the score
     this.updateStats();
+    startOverBtn.style.visibility = "hidden";
 
     // show first question
     this.showQuestion(questions[this.currPosition]);
@@ -76,12 +77,47 @@ let app = {
 
   // +++++++++++++++++++++++++++++++++
 
+  checkIfEnd: function () {
+    // compare score to arr length
+    let isEnd = false;
+    let endMsg = document.getElementById("endMsg");
+    endMsg.innerText = "";
+    let startOverBtn = document.getElementById("startOverBtn");
+    startOverBtn.style.visibility = "hidden";
+
+    // TODO change value to remove "-3"
+    if (this.score === questions.length - 4) {
+      isEnd = true;
+      console.log("isEnd: " + isEnd);
+
+      // let startOverBtn = document.createElement("button");
+      startOverBtn.style.visibility = "visible";
+      endMsg.innerText = "Congratulations, you've reached the end!";
+    }
+  },
+
+  startOver: function () {
+    app.start();
+    endMsg = "";
+    resultsMsg = "";
+    startOverBtn.style.visibility = "hidden";
+    console.log("starting over");
+    location.reload();
+  },
+
   showQuestion: function (arr) {
     // show question
     let questTextDiv = document.getElementById("questText");
     questTextDiv.textContent = arr.qText;
     let currQuestion = questions[this.currPosition];
     console.log("currQuestion.qAnswer (index): " + currQuestion.qAnswer);
+
+    // construction begin
+    endMsg.innerText = "";
+    startOverBtn.style.visibility = "hidden";
+    resultsMsg = "";
+    console.log(resultsMsg);
+    // construction end
 
     // show question options
     let questChoices = document.querySelectorAll(".questChoices");
@@ -100,9 +136,9 @@ let app = {
   checkAnswer: function (userSelection) {
     let currQuestion = questions[this.currPosition];
 
-    // replace construction
-    showAnswerBtn.hidden = false;
-    hideAnswerBtn.hidden = true;
+    // replace
+    // showAnswerBtn.hidden = false;
+    // hideAnswerBtn.hidden = true;
 
     // if CORRECT answer
     // answers are considered correct if "true" arg in checkAnswer method: showResult(true)
@@ -126,6 +162,8 @@ let app = {
 
     // show current question (which is next question if answered correctly)
     this.showQuestion(questions[this.currPosition]);
+
+    this.checkIfEnd();
 
     // Can toggle this on to ensure current displayed answer is always updated
     // Don't leave on though

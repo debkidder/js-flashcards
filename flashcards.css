@@ -104,6 +104,10 @@ ul {
   box-shadow: 2px 2px 5px gray;
 }
 
+.hiddenBtn {
+  visibility: hidden;
+}
+
 a:focus {
   /* my palette */
   color: #a284f0;
