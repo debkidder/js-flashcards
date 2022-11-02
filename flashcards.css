@@ -13,6 +13,16 @@ body {
   align-items: center;
 }
 
+h1 {
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  color: gray;
+}
+
 #flashcard {
   margin-top: 2px;
   width: 400px;
@@ -21,6 +31,8 @@ body {
   align-items: center;
   background: #fffae8;
   border-radius: 7px;
+  box-shadow: #b4b4b4 0px 0px 0px 2px inset, #fffae8 10px -10px 0px -3px,
+    #b4b4b4 10px -10px, #fffae8 20px -20px 0px -3px, #b4b4b4 20px -20px;
 }
 
 ul {
@@ -75,6 +87,8 @@ ul {
   font-weight: bold;
   padding-top: 30px;
   color: #5f5f5f;
+  transition: color white;
+  transition-timing-function: ease;
 }
 
 .btn {
