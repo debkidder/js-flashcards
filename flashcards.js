@@ -85,8 +85,8 @@ let app = {
     let startOverBtn = document.getElementById("startOverBtn");
     startOverBtn.style.visibility = "hidden";
 
-    // TODO change value to remove "-3"
-    if (this.score === questions.length - 4) {
+    // TODO replace test shortcut with unit test
+    if (this.score === questions.length) {
       isEnd = true;
       console.log("isEnd: " + isEnd);
 
@@ -112,12 +112,12 @@ let app = {
     let currQuestion = questions[this.currPosition];
     console.log("currQuestion.qAnswer (index): " + currQuestion.qAnswer);
 
-    // construction begin
+    // improve
     endMsg.innerText = "";
     startOverBtn.style.visibility = "hidden";
     resultsMsg = "";
     console.log(resultsMsg);
-    // construction end
+    //
 
     // show question options
     let questChoices = document.querySelectorAll(".questChoices");
